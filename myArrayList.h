@@ -31,11 +31,29 @@ class myArrayList
         {
             return arr[x];
         }
-        void print() const
+        int getSize() const
+        {
+            return size;
+        }
+         void print() const
         {
             for(int i = 0;i<size;i++)cout<<arr[i]<<" ";
             cout<<endl;
         }
+        const bool operator == (const myArrayList<T> &m) const
+        {
+            if( size != m.size )return false;
+            for(int i = 0;i<size;i++)
+            {
+                if(arr[i] != m.getElementAt(i))return false;
+            }
+            return true;
+        }
+        ~myArrayList()
+        {
+            delete []arr;
+        }
+
    private:
        void genislet()
        {
