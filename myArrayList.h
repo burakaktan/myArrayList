@@ -27,11 +27,11 @@ class myArrayList
             }
             cout<<"Added "<<x<<" successfully"<<endl;
         }
-        T getElementAt(int x)
+        T getElementAt(int x) const
         {
             return arr[x];
         }
-        void print()
+        void print() const
         {
             for(int i = 0;i<size;i++)cout<<arr[i]<<" ";
             cout<<endl;
@@ -46,7 +46,7 @@ class myArrayList
             }
             capacity *= 2;
             swap(arr,yedek);
-            free(yedek);
+            delete []yedek;
         }
         T *arr;
         int size;
